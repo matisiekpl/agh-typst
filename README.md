@@ -8,7 +8,7 @@ You can use this template in the Typst web app by clicking "Start from template"
 
 Alternatively, you can use the CLI to start a new project with this template using the command:
 ```
-typst init @matisiekpl/agh-typst
+typst init @preview/agh-typst
 ```
 
 Typst will create a new directory with all the files needed to get you started.
@@ -31,7 +31,7 @@ This template exports the `agh` function with the following named arguments:
 Here's how to use the template:
 
 ```typ
-#import "@matisiekpl/agh-typst:0.1.0": agh
+#import "@preview/agh-typst:0.1.0": agh
 
 #show: agh.with(
   titles: ("Tytuł pracy w języku polskim", "Title in English"),
