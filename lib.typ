@@ -77,8 +77,7 @@
     Kraków #today.year()
   ]
 
-  pagebreak()
-  pagebreak()
+  pagebreak(to: "odd")
 
   align(bottom + right)[
     #block(width:70%)[
@@ -90,8 +89,7 @@
     ]
   ]
 
-  pagebreak()
-  pagebreak()
+  pagebreak(to: "odd")
 
   set align(left)
   v(1cm)
@@ -100,6 +98,8 @@
     #v(0.5cm)
     ],
   indent: 18pt)
+
+  pagebreak(to: "odd")
 
   set page(numbering: "1")
   set heading(numbering: "1.1")
@@ -110,7 +110,7 @@
     #it
   ])
 
-
   body
+  pagebreak(to: "odd")
   bibliography
 }
