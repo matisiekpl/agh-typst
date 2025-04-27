@@ -5,13 +5,16 @@
   supervisor: [Supervisor],
   course: [Course],
   masters: bool,
+  department: [Department],
+  acknowledgements: (),
   body
 ) = {
   set document(title: titles.join(" "), author: author)
   set page(
-    paper: "a4"
+    paper: "a4",
+    margin: (top: 30mm, bottom: 30mm, left: 30mm, right: 20mm),
   )
-  set text(spacing: 3pt)
+  set text(spacing: 3pt, size: 12pt)
   set align(center)
 
   figure(
@@ -29,7 +32,7 @@
   v(0cm)
 
   text(
-    "Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej",
+    department,
     weight: 700,
     size: 12pt,
   )
@@ -75,8 +78,38 @@
   ]
 
   pagebreak()
+  pagebreak()
+
+  align(bottom + right)[
+    #block(width:70%)[
+      #set align(right)
+      #for a in acknowledgements [
+        #a
+        #v(0cm)
+      ]
+    ]
+  ]
+
+  pagebreak()
+  pagebreak()
+
+  set align(left)
+  v(1cm)
+  outline(title: [
+    Spis treści
+    #v(0.5cm)
+    ],
+  indent: 18pt)
 
   set page(numbering: "1")
+  set heading(numbering: "1.1")
+  set par(first-line-indent: 1.25cm)
+  show heading: pad.with(left: 0cm, bottom: 0.5cm)
+
+  show heading: it => block(inset: (left: (it.level - 1) * 1.25cm), [
+    #it
+  ])
+
 
   body
   bibliography
